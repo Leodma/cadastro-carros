@@ -20,10 +20,19 @@
     DOM.prototype.setText = function setText(texto){ this.element.innerHTML = texto};
     DOM.prototype.insert = function insert(child) {this.element.appendChild(child)};
     DOM.prototype.cleanValue = function cleanValue(){this.element.value = ""};
+  
     DOM.prototype.remove = function remove() {
     let child = this.element.firstElementChild;
     if (child)
         this.element.removeChild(child);
+    };
+
+    function showImage(url){
+        let fragment = doc.createDocumentFragment();
+        var img = document.createElement('img');
+        img.setAttribute('src', url);
+        fragment.appendChild(img);
+        return fragment;
     };
 
     DOM.prototype.insertLastRow = function insertLastRow(dataList){
@@ -32,7 +41,11 @@
             let cell;
             dataList.forEach(function(el, index){
                 cell = row.insertCell(index);
-                cell.innerHTML = el;
+                if (index === 0){
+                    cell.appendChild(showImage(el))
+                }else{
+                    cell.innerHTML = el;
+                }
             });
             cell = row.insertCell(dataList.length);
             cell.classList.add("delete");
