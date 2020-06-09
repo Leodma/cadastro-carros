@@ -1,0 +1,63 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.flex-container{
+    width: 90%;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.table-car{
+    text-align: center;
+    
+}
+
+
+table tr td{
+    padding: 10px;
+}
+
+.table-car-head{
+    background-color: crimson;
+    color: white;
+    font-weight:bold;
+
+    
+}
+.table-car-head td{
+    padding: 10px;
+    margin: 0;
+  
+}
+
+
+.campos{
+    display:block;
+    margin:10px;
+}
+
+.campos label{
+    display: inline-block;
+    width: 60px;
+    color: grey;
+}
+
+
+.delete{
+    color: red;;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.delete:hover{
+    background-color: salmon;
+    color: black;
+}
+
+.delete::before{
+    content: 'X';
+}
