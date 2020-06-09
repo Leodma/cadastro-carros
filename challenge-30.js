@@ -1,8 +1,6 @@
 (function() {
   'use strict';
 
-  
-
  function api(){
 
    const CompanyName = new DOM('[data-js="company-name"]');
@@ -12,7 +10,6 @@
    let table = new DOM('table');
    const ajax = new XMLHttpRequest();
 
- 
    function handleResponse( ){
      if (ajax.readyState === 4 &&  ajax.status === 200){
        return ajax.response;
@@ -25,7 +22,6 @@
      CompanyPhone.setText(data.phone);
    };
 
- 
    ajax.open('GET', 'company.json');
    ajax.send();
    ajax.addEventListener('loadend', function(){
@@ -34,19 +30,17 @@
          fillNameCompany(data);
        });
     
+  table.on('click', function(event){
+    let target = event.target;
+    if(target.classList.contains('delete')){
+      table.deleteRow(target.parentNode.rowIndex);
+    };
+  });
 
-    table.on('click', function(event){
-      let target = event.target;
-      if(target.classList.contains('delete')){
-       table.deleteRow(target.parentNode.rowIndex);
-      };
-    });
-
-    form.on('submit', function(event){
-      event.preventDefault();
-      table.insertLastRow(inputsForm.getValues());
-      });
-   
+  form.on('submit', function(event){
+    event.preventDefault();
+    table.insertLastRow(inputsForm.getValues());
+    });  
  };
 
 
