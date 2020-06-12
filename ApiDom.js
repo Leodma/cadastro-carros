@@ -27,10 +27,12 @@
         this.element.removeChild(child);
     };
 
+
     function showImage(url){
         let fragment = doc.createDocumentFragment();
-        var img = document.createElement('img');
+        var img = document.createElement('img');  
         img.setAttribute('src', url);
+        img.onerror = function(){ img.setAttribute('src', 'noimage.jpg');}
         fragment.appendChild(img);
         return fragment;
     };
