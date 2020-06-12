@@ -1,6 +1,10 @@
 (function() {
   'use strict';
-
+ /* controlar melhor o uso da imagem - verificar se é uma url
+    inserir uma imagem padrão quando não tiver URL ou for uma URL inválida
+    validar os campos dos formulários com HTML
+    
+ */ 
  function api(){
 
    const CompanyName = new DOM('[data-js="company-name"]');
@@ -16,6 +20,7 @@
      };
      return null
    };
+
 
    function fillNameCompany(data){
      CompanyName.setText(data.name);
