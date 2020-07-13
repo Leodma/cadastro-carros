@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel='stylesheet' href="style.css">
+    <title>Cadastro de Carros</title>
+</head>
+<body>
+    <header>
+        <h3 data-js="company-name">Cadastro de Veículos</h3>
+        <h5 data-js ="company-phone">Telefone</h5>
+    </header>
+    
+    <main class="flex-container">
+        <form  class="formulario" method="POST" action="/" data-js="car-form">
+            <div class="campos">
+                <label for="name">Imagem:</label>
+                <input type="text" name="imagem">
+            </div>
+            <div class="campos">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca">
+            </div>
+            <div class="campos">
+                <label for="modelo">Modelo:</label>
+                <input type="text" name="modelo">
+            </div>
+            <div class="campos">
+                <label for="ano">Ano:</label>
+                <input type="text" name="ano">
+            </div>
+            <div class="campos">
+                <label for="placa">Placa:</label>
+                <input type="text" name="placa">
+            </div>
+            <div class="campos">
+                <label for="cor">Cor:</label>
+                <input type="text" name="cor">
+            </div>
+           
+            <button type="submit">Cadastrar</button>
+    
+        </form>
+        <table class="table-car">
+            <tr class="table-car-head">
+                <td>Imagem</td>
+                <td>Marca</td>
+                <td>Modelo</td>
+                <td>Ano</td>
+                <td>Placa</td>
+                <td>Cor</td>
+                <td>Remover</td>
+            </tr>
+        </table>
+    </main>
+
+    <script src="ApiDom.js"></script>
+    <script src="challenge-30.js"></script>
+    
+</body>
+</html>
